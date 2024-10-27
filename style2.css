@@ -1,0 +1,118 @@
+/* Fade-up animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+.contener {
+    display: flex;               /* Enable flexbox */
+    justify-content: center;     /* Center horizontally */
+    align-items: center;         /* Center vertically */
+    min-height: 55vh;          /* Full viewport height */
+    background: black;
+}
+
+.contener .imge-contener {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.contener .imge {
+    height: auto;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    text-align: center;
+    animation: fadeUp 0.8s ease-in-out forwards; /* Apply fade-up animation */
+    opacity: 0; /* Initial opacity for animation */
+}
+
+.contener .imge img {
+    height: 232px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.2s linear; /* Smooth transition for scaling */
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.contener .imge-description {
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    /* font-weight: bold; */
+    animation: fadeUp 0.8s ease-in-out forwards; /* Apply fade-up animation */
+    opacity: 0; /* Initial opacity for animation */
+    animation-delay: 0.2s; /* Delay to ensure text fades up after the imge */
+}
+
+.contener .imge img:hover {
+    transform: scale(1.1); /* Scale only the imge on hover */
+}
+
+.contener .imge-description:hover {
+    color: #f39c12; /* Change text color on hover */
+}
+
+.contener .popup-imge {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+
+.contener .popup-imge span {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.contener .popup-imge img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 750px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .contener .popup-imge img {
+        width: 95%;
+    }
+}
+.contact-section .contact-info{
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
